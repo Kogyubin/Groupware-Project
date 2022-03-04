@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>kr.co</groupId>
 	<artifactId>kitri</artifactId>
-	<name>imgboard_prj</name>
+	<name>SCKITRI_Groupware</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -173,6 +173,7 @@
 		</dependency>        
 	</dependencies>
     <build>
+    	<finalName>sckitri</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
