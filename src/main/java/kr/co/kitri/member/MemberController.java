@@ -29,7 +29,7 @@ public class MemberController {
 	
 	@RequestMapping("/signin-4")
 	public String singIn4() {
-		System.out.println("etstetst");
+		System.out.println("success");
 		return "views/member/sign-in";
 	}
 	
