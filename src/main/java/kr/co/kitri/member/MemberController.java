@@ -26,5 +26,13 @@ public class MemberController {
 		System.out.println("test3");
 		return "views/member/sign-in";
 	}
+	
+	@RequestMapping("/signin-4")
+	public String singIn4() {
+		System.out.println("잘올라가지나");
+		return "views/member/sign-in";
+	}
+	
+	
 
 }
