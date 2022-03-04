@@ -1,4 +1,4 @@
-package kr.co.kitri;
+package kr.co.kitri.home;
 
 import java.text.DateFormat;
 import java.util.Date;
