@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="include/header.jsp" %>
 <!DOCTYPE HTML>
 <!--
 	Editorial by HTML5 UP
@@ -8,11 +9,10 @@
 -->
 <html>
 	<head>
-		<title>Editorial by HTML5 UP</title>
+		<title>SCKITRI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
-		
 	</head>
 	<body class="is-preload">
 
@@ -25,13 +25,13 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<a href="index.html" class="logo"><strong>SCKITRI</strong> GROUPWARE</a>
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href="${path}/sign-out" ><span class="label">로그아웃</span></a></li>
+<!-- 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+<!-- 										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+<!-- 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+<!-- 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
 									</ul>
 								</header>
 
@@ -167,16 +167,24 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="elements.html">게시판</a></li>
-										<li>
-											<span href="#" class="opener">전자결재</span>
+										<li><a href="${path}/user">사용자관리</a></li>
+										<li><a href="index.html">부서관리</a></li>
+										<li><a href="generic.html">전자결재</a></li>
 											<ul>
 												<li><a href="signdetail">기안하기</a></li>
 												<li><a href="#">결재받을(은)문서</a></li>
 												<li><a href="#">결재할(한)문서</a></li>
 											</ul>
-										</li>
+										<li><a href="elements.html">게시판</a></li>
+<!-- 										<li> -->
+<!-- 											<span class="opener">Submenu</span> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#">Lorem Dolor</a></li> -->
+<!-- 												<li><a href="#">Ipsum Adipiscing</a></li> -->
+<!-- 												<li><a href="#">Tempus Magna</a></li> -->
+<!-- 												<li><a href="#">Feugiat Veroeros</a></li> -->
+<!-- 											</ul> -->
+<!-- 										</li> -->
 <!-- 										<li><a href="#">Etiam Dolore</a></li> -->
 <!-- 										<li><a href="#">Adipiscing</a></li> -->
 <!-- 										<li> -->
