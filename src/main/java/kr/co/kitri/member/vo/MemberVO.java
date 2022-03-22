@@ -1,4 +1,4 @@
-package kr.co.kitri.member;
+package kr.co.kitri.member.vo;
 
 import java.util.Date;
 

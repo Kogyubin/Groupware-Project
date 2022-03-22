@@ -1,31 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="../include/header.jsp" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Groupware</title>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/sign-in.css">
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-<!-- <script type="text/javascript" src="resources/assets/js/jquery.min.js"></script> -->
-<script type="text/javascript" src="js/sign-in.js"></script>
+<title>SCKITRI</title>
+
+<link rel="stylesheet" href="resources/assets/css/sign-in.css">
+
+
+<script type="text/javascript" src="resources/assets/js/sign-in.js"></script>
 </head>
 <body>
 
-			<form class = "form-signin" action="" method="post" name="form-signin">
-			  <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Login</h2>
-			  <button class="submit"><span class="entypo-lock"><i class="fa fa-lock"></i></span></button>
-			  <span class="entypo-user inputUserIcon">
-			     <i class="fa fa-user"></i>
-			   </span>
-			  <input type="text" class="user" placeholder="ursername"/>
-			  <span class="entypo-key inputPassIcon">
-			     <i class="fa fa-key"></i>
-			   </span>
-			  <input type="password" class="pass"placeholder="password"/>
-			</form>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+<!-- 		<form action="#"> -->
+<!-- 			<h1>Create Account</h1> -->
+<!-- 			<div class="social-container"> -->
+<!-- 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a> -->
+<!-- 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a> -->
+<!-- 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+<!-- 			</div> -->
+<!-- 			<span>or use your email for registration</span> -->
+<!-- 			<input type="text" placeholder="Name" /> -->
+<!-- 			<input type="email" placeholder="Email" /> -->
+<!-- 			<input type="password" placeholder="Password" /> -->
+<!-- <!-- 			<button>Sign Up</button> --> 
+<!-- 		</form> -->
+	</div>
+	<div class="form-container sign-in-container">
+		<form class="form-signin" action="${path }/sign-in" method="post" name="form-signin">
+		
+			<h1>Sign in</h1>
+			<input type="text" name="username" placeholder="Username" />
+			<input type="password" name="password" placeholder="Password" />
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>SCKITRI GROUPWARE</h1>
+<!-- 				<p>Enter your personal details and start journey with us</p> -->
+<!-- 				<button class="ghost" id="signUp">Sign Up</button> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+</footer>
 
 
 

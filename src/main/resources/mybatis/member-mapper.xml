@@ -5,5 +5,15 @@
 
 <mapper namespace="member">
 
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO emp
+		VALUES (#{emp_no}, #{emp_id}, #{emp_pw}, #{dept_no}, #{hiredate}, #{position})
+	</insert>
 	
+	<select id="selectSigninMember" parameterType="member" resultType="int">
+		SELECT COUNT(*) 
+		FROM emp
+		WHERE emp_id=#{emp_id} 
+		AND emp_pw=#{emp_pw}
+	</select>
 </mapper>
