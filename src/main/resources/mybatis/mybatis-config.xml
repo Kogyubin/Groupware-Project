@@ -5,7 +5,8 @@
   
 <configuration>
 	<typeAliases>
- 	<typeAlias alias="member" type="kr.co.kitri.member.MemberVO" /> 	
+ 	<typeAlias alias="member" type="kr.co.kitri.member.MemberVO" />
+ 	<typeAlias alias="board" type="kr.co.kitri.board.vo.BoardVO"/>
  	</typeAliases>	
 </configuration>
  
