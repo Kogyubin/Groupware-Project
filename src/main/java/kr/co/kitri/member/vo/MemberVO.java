@@ -11,7 +11,14 @@ public class MemberVO {
 	private int dept_no;
 	private Date hiredate;
 	private String position;
+	private String deleteflag;
 	
+	public String getDeleteflag() {
+		return deleteflag;
+	}
+	public void setDeleteflag(String deleteflag) {
+		this.deleteflag = deleteflag;
+	}
 	public int getEmp_no() {
 		return emp_no;
 	}

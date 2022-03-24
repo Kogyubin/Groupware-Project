@@ -22,10 +22,11 @@ function signPath(){
 	
 	
     $.ajax({
-        url: "popupUser",
+        url: "popupUsers4SignPath",
         type: "post"        
     }).done(function(result){
                 $("#popupUsers").html(result); 
+                
 				
     });
     
@@ -33,8 +34,6 @@ function signPath(){
     
     
 }
-
-
 	
 
 

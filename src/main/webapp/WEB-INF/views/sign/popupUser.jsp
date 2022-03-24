@@ -5,16 +5,16 @@
 	var selectedNode = null;
 	
 	$(function(){
-			console.log("${treeStr}");
+			
 		$("#tree").dynatree({
 			
 			children: <c:out value="${treeStr}" escapeXml="false"/>,
 			onActivate: deptTreeInUserActivate
 		});
 		
-// 	    $("#tree").dynatree("getRoot").visit(function(node){
-// 	        node.expand(true);
-// 	    });
+	    $("#tree").dynatree("getRoot").visit(function(node){
+	        node.expand(true);
+	    });
 	    
 	    
 	});
@@ -30,20 +30,8 @@
         			$("#userlist").html(result);
     		}    		
         );
-    }
+    }            
     
-    function deptTreeInUserActivate(node) {
-        if (node==null || node.data.key==0) return;
-        
-        $.ajax({
-            url: "popupUsersByDept",
-            type:"post", 
-            data: { deptno : node.data.key }        
-        }).success(function(result){
-                    $("#userlist").html(result);
-            }            
-        );
-    }
 
 </script>    
 
@@ -82,7 +70,7 @@
 			                    </div>
 			                    
 			                    <div class="panel-body maxHeight400" id="userlist">
-			                    <a>고규빈</a>
+
 							    </div>    
 							</div>
 						</div>	
@@ -94,3 +82,4 @@
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
+      </div>  
