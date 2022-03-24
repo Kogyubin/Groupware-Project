@@ -107,6 +107,20 @@ function fn_search4Users() {
     );
 }
 
+function fn_closeUsers() {
+	var ret = "";
+	$("#seletedUsers > tbody  > tr").each(function() {
+		if (!this.id) return; 
+		var emp_no = this.id.replace("tr","");
+		var emp_name = $(this).find('td:eq(1)').text();
+		var select = $(this).find('td:eq(0) > select').val();
+		var position = $(this).find('td:eq(3)').text();
+		ret += emp_no + "," +emp_name + "," + select + "," + position + "||";
+	});
+	
+	fn_selectUsers(ret)
+}
+
 
 </script>    
 
