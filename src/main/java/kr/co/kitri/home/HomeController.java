@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	
+
 	@RequestMapping(value = "/main")
 	public String home(HttpSession session) {
 		
