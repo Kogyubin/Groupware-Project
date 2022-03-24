@@ -10,11 +10,14 @@
     </select> 
     
     <select id="selectUserListWithDept" parameterType="kr.co.kitri.common.SearchVO" resultType="kr.co.kitri.member.vo.MemberVO">
-        SELECT e.EMP_NO, e.EMP_NAME, e.EMP_ID, e.DEPT_NO, d.DEPT_NAME, e.POSITION
+        SELECT e.EMP_NO, e.EMP_NAME, e.EMP_ID, e.DEPT_NO, d.DEPT_NAME, e.POSITION, e.HIREDATE
           FROM EMP e
          INNER JOIN DEPT d ON d.DEPT_NO=e.DEPT_NO
          WHERE e.DELETEFLAG='N' AND d.DELETEFLAG='N'
          
+          <if test="searchExt1!=null and searchExt1!=''">
+               AND e.DEPT_NO=#{searchExt1} 
+           </if>
            <if test="searchKeyword!=null and searchKeyword!=''">
                AND e.EMP_NAME LIKE '%' || #{searchKeyword} || '%' 
            </if>
