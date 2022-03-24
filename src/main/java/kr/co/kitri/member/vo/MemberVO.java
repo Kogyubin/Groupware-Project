@@ -9,9 +9,16 @@ public class MemberVO {
 	private String emp_id;
 	private String emp_pw;
 	private int dept_no;
-	private Date hiredate;
+	private String hiredate;
 	private String position;
+	private String deleteflag;
 	
+	public String getDeleteflag() {
+		return deleteflag;
+	}
+	public void setDeleteflag(String deleteflag) {
+		this.deleteflag = deleteflag;
+	}
 	public int getEmp_no() {
 		return emp_no;
 	}
@@ -42,10 +49,11 @@ public class MemberVO {
 	public void setDept_no(int dept_no) {
 		this.dept_no = dept_no;
 	}
-	public Date getHiredate() {
+	
+	public String getHiredate() {
 		return hiredate;
 	}
-	public void setHiredate(Date hiredate) {
+	public void setHiredate(String hiredate) {
 		this.hiredate = hiredate;
 	}
 	public String getPosition() {
