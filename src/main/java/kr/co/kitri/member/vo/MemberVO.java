@@ -9,7 +9,7 @@ public class MemberVO {
 	private String emp_id;
 	private String emp_pw;
 	private int dept_no;
-	private Date hiredate;
+	private String hiredate;
 	private String position;
 	private String deleteflag;
 	
@@ -49,10 +49,11 @@ public class MemberVO {
 	public void setDept_no(int dept_no) {
 		this.dept_no = dept_no;
 	}
-	public Date getHiredate() {
+	
+	public String getHiredate() {
 		return hiredate;
 	}
-	public void setHiredate(Date hiredate) {
+	public void setHiredate(String hiredate) {
 		this.hiredate = hiredate;
 	}
 	public String getPosition() {
