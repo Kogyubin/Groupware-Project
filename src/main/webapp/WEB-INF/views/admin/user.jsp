@@ -53,30 +53,6 @@
 
 		});
 
-		//수정 버튼 클릭
-		// 			$("button[name='modify']").click(function(){
-		// 				action='modify';
-		// 				type='PUT';
-		// 				empno = this.value;
-
-		// 			//content 담기
-		// 			var row = $(this).parent().parent().parent();
-		// 			var tr = row.children();
-
-		// 			$("#modal-title").text("수정");
-
-		// 			$("#empNo").val(empNo);
-		// 			$("#empName").val(empName);
-		// 			$$("#empId").val(empId);
-		// 			$("#empPw").val(empPw);
-		// 			$("#deptNo").val(deptNo);
-		// 			$("#hiredate").val(hiredate);
-
-		// 			$("#myModal").modal();
-
-		// 			});
-
-		//삭제 버튼 클릭
 
 		//Modal의 submit 버튼 클릭
 		$("#modalSubmit").click(function() {
@@ -121,6 +97,29 @@
 
 		});
 	});
+	
+	//사원 디테일
+	function fn_UserRead(emp_no){
+		$.ajax({
+			url: "${path}/userRead", 
+			type:"post", 
+			data : {emp_no:emp_no},
+			success: function(result){
+				$("#empNo").val(result.emp_no);	
+				$("#empNo").attr("readonly",true);
+				$("#empName").val(result.emp_name);
+				$("#empId").val(result.emp_id);
+				$("#deptNo").val(result.dept_no);	
+				$("#hiredate").val(result.hiredate);
+				$("#position").val(result.position);
+
+				$("#myModal").modal();	
+			}
+		})		
+	}
+	
+
+	
 </script>
 
 </head>
@@ -153,44 +152,7 @@
 			</div>
 		</div>
 
-
-
-<!-- 		<table class="table table-bordered"> -->
-<!-- 			<thead> -->
-<!-- 				<tr> -->
-<!-- 					<th class="col-md-1">사원번호</th> -->
-<!-- 					<th class="col-md-1">사원명</th> -->
-<!-- 					<th class="col-md-1">아이디</th> -->
-<!-- 					<th class="col-md-1">비밀번호</th> -->
-<!-- 					<th class="col-md-1">부서번호</th> -->
-<!-- 					<th class="col-md-1">입사일</th> -->
-<!-- 					<th class="col-md-1">직책</th> -->
-<!-- 					<th class="col-md-1">수정/삭제</th> -->
-<!-- 				</tr> -->
-<!-- 			</thead> -->
-<!-- 			<tbody> -->
-<%-- 				<c:forEach items="${mlist}" var="mvo"> --%>
-<%-- 					<tr id="tr${mlist.empno}"> --%>
-<%-- 						<td>${mlist.empno}</td> --%>
-<%-- 						<td>${mlist.empname}</td> --%>
-<%-- 						<td>${mlist.empid}</td> --%>
-<%-- 						<td>${mlist.emppw}</td> --%>
-<%-- 						<td>${mlist.deptno}</td> --%>
-<%-- 						<td>${mlist.hiredate}</td> --%>
-<%-- 						<td>${mlist.position}</td> --%>
-<!-- 						<td> -->
-<!-- 							<div class="btn-group"> -->
-<%-- 								<button name="modify" value="${mlist.empno}" class="btn btn-xs btn-warning">수정</button> --%>
-<%-- 								<button name="delete" value="${mlist.empno}" class="btn btn-xs btn-danger">삭제</button> --%>
-
-<!-- 							</div> -->
-<!-- 						</td> -->
-<!-- 					</tr> -->
-<%-- 				</c:forEach> --%>
-<!-- 			</tbody> -->
-<!-- 		</table> -->
-		<button id="addBtn" type="button" class="btn btn-info btn-sm"
-			data-toggle="modal">추가</button>
+		<button id="addBtn" type="button" class="btn btn-info btn-sm" data-toggle="modal">추가</button>
 
 	</div>
 	<!-- Modal -->
@@ -225,6 +187,17 @@
 						</tr>
 						<tr>
 							<td>부서번호</td>
+<!-- 								<td> -->
+<%-- 									<select class="form-control" id="select"> --%>
+<%--                                            <c:forEach items="${DEPTNO_LIST}" var="LIST"> --%>
+<%--                                            	<c:choose> --%>
+<%--                                            		<c:when test="${LIST eq EMP_INFO_DETAIL.deptno}"><option selected="selected">${LIST}</option></c:when> --%>
+<%--                                            		<c:otherwise><option>${LIST}</option> </c:otherwise> --%>
+<%--                                            	</c:choose> --%>
+<%--                                            </c:forEach> --%>
+<%--                                      </select> --%>
+								
+<!-- 								</td> -->
 							<td><input class="form-control" id="deptNo" type="text"></td>
 						</tr>
 						<tr>
@@ -232,7 +205,7 @@
 							<td><input class="form-control" id="hiredate" type="date"></td>
 						</tr>
 						<tr>
-							<td>직책</td>
+							<td>직위</td>
 							<td><input class="form-control" id="position" type="text"></td>
 						</tr>
 					</table>

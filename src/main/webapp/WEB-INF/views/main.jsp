@@ -167,8 +167,11 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="${path}/user">사용자관리</a></li>
-										<li><a href="index.html">부서관리</a></li>
+									<li><a href="#">조직관리</a></li>
+											<ul>
+												<li><a href="${path}/user">사용자관리</a></li>
+												<li><a href="index.html">부서관리</a></li>
+											</ul>
 										<li><a href="generic.html">전자결재</a></li>
 											<ul>
 												<li><a href="signdetail">기안하기</a></li>

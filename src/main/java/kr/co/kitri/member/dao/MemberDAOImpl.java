@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.co.kitri.common.SearchVO;
 import kr.co.kitri.member.vo.MemberVO;
 
 
@@ -29,9 +30,9 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int deleteMember(MemberVO mvo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteUser(int emp_no) {
+		
+		return sqlSession.delete("member.deleteUser", emp_no);
 	}
 
 	@Override
@@ -50,5 +51,17 @@ public class MemberDAOImpl implements MemberDAO {
 	public int selectSigninMember(MemberVO mvo) {
 		return sqlSession.selectOne("member.selectSigninMember", mvo);
 	}
+
+	@Override
+	public List<?> selectUserListWithDept(SearchVO param) {
+		return  sqlSession.selectList("selectUserListWithDept", param);
+	}
+
+	@Override
+	public MemberVO selectUserOne(int emp_no) {
+		return sqlSession.selectOne("member.selectUserOne", emp_no);
+	}
+	
+	
 
 }

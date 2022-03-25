@@ -16,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 import kr.co.kitri.admin.organ.DeptSvc;
 import kr.co.kitri.admin.user.service.UserSvc;
 import kr.co.kitri.common.SearchVO;
@@ -55,7 +56,6 @@ public class UserController {
 	  * 사원리스트.
 	  */
 	
-	 
 	@RequestMapping(value = "/userList")
     public String popupUsers4Users(HttpServletRequest request, SearchVO searchVO, ModelMap modelMap) {
         popupUsersByDept(request, searchVO, modelMap);
@@ -67,21 +67,19 @@ public class UserController {
      * 지정된 부서 사원리스트.
      */
 	
-
-	    public String popupUsersByDept(HttpServletRequest request, SearchVO searchVO, ModelMap modelMap) {
-	        String deptno = request.getParameter("deptno");
-	        searchVO.setSearchExt1(deptno);
-	        
-	        List<?> listview  = usvc.selectUserListWithDept(searchVO);
-	        
-	        modelMap.addAttribute("listview", listview);
-	        
-	        return "sign/popupUsersByDept";
-	    }
-	
+    public String popupUsersByDept(HttpServletRequest request, SearchVO searchVO, ModelMap modelMap) {
+        String deptno = request.getParameter("deptno");
+        searchVO.setSearchExt1(deptno);
+        
+        List<?> listview  = usvc.selectUserListWithDept(searchVO);
+        
+        modelMap.addAttribute("listview", listview);
+        
+        return "sign/popupUsersByDept";
+    }
 	
 	/**
-     * 사용자저장.
+     * 사원저장.
 	 * @throws IOException 
      */
 	@RequestMapping("/addUserSave")
@@ -98,6 +96,24 @@ public class UserController {
 	}
 	
 	/**
-     * 아이디 중복체크.
+     * 사원 디테일.
      */
+	@RequestMapping("/userRead")
+	@ResponseBody
+	 public void userRead(int emp_no) {
+		
+//		String emp_no = request.getParameter("emp_no");
+		MemberVO mvo = usvc.selectUserOne(emp_no);
+	}
+	
+	/**
+     * 사원 삭제.
+     */
+//	@RequestMapping("/userDelete")
+//	@ResponseBody
+//	  public boolean userDelete(Model model, int emp_no) {
+//		  boolean flag = usvc.deleteUser(emp_no);
+//		 
+//		  return flag;
+//	  }
 }

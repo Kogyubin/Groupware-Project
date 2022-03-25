@@ -31,8 +31,26 @@ public class UserSvcImpl implements UserSvc {
 
 	@Override
 	public List<?> selectUserListWithDept(SearchVO param) {
-		
 		return mdao.selectUserListWithDept(param);
+	}
+
+	@Override
+	public MemberVO selectUserOne(int emp_no) {
+		return mdao.selectUserOne(emp_no);
+	}
+
+	@Override
+	public boolean deleteUser(int emp_no) {
+		int result = mdao.deleteUser(emp_no);
+		boolean flag = false;
+		if(result==0) {
+			flag=false;
+		}else {
+			flag=true;
+		}
+		
+		return flag;
+		
 	}
 	
 	

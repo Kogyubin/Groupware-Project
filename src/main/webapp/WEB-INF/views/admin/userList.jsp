@@ -5,14 +5,14 @@
 
 <table class="table table-striped table-bordered table-hover">
 	<colgroup>
-		<col width='5%' />
-		<col width='15%' />
 		<col width='10%' />
-		<col width='14%' />
-		<col width='14%' />
-		<col width='14%' />
-		<col width='14%' />
-		<col width='14%' />
+		<col width='15%' />
+		<col width='15%' />
+		<col width='15%' />
+		<col width='15%' />
+		<col width='15%' />
+		<col width='15%' />
+	
 		
 	</colgroup>
 	<thead>
@@ -21,23 +21,23 @@
 			<th>사원번호</th>
 			<th>이름</th>
 			<th>아이디</th>
-			<th>부서번호</th>
 			<th>입사일</th>
 			<th>직위</th>
+			<th></th>
+			
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach var="listview" items="${listview}" varStatus="status">
 			<tr>
 				<td><c:out value="${status.index+1}" /></td>
-<%-- 				<td><a href="javascript:fn_addUser(<c:out value="${listview.emp_no}"/>, '<c:out value="${listview.emp_name}"/>', '<c:out value="${listview.emp_id}"/>', '<c:out value="${listview.emp_pw}"/>')"><c:out --%>
-<%-- 							value="${listview.dept_no}" /></a></td> --%>
-				<td><c:out value="${listview.emp_no}" /></td>
-				<td><c:out value="${listview.emp_name}" /></td>
+				<td><a href="javascript:fn_UserRead(<c:out value="${listview.emp_no}"/>)"><c:out value="${listview.emp_id}"/></a></td>
+				<td><a href="javascript:fn_UserRead(<c:out value="${listview.emp_no}"/>)"><c:out value="${listview.emp_name}"/></a></td>
 				<td><c:out value="${listview.emp_id}" /></td>
-				<td><c:out value="${listview.dept_no}" /></td>
 				<td><c:out value="${listview.hiredate}" /></td>
 				<td><c:out value="${listview.position}" /></td>
+<%-- 				<td><a href="javascript:fn_UserDelete(<c:out value="${listview.emp_no}"/>)"><i class="fa fa-times fa-fw"></i></a></td> --%>
+				
 			</tr>
 		</c:forEach>
 	</tbody>

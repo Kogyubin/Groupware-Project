@@ -16,4 +16,14 @@
 		WHERE emp_id=#{emp_id} 
 		AND emp_pw=#{emp_pw}
 	</select>
+	
+	 <select id="selectUserOne" parameterType="int" resultType="member">
+	 	SELECT * FROM emp WHERE emp_no=#{emp_no}
+	 </select>
+	 
+	 <update id="deleteUser" parameterType="member">
+	 	UPDATE emp
+	 	SET deleteflag = 'Y'
+	 	WHERE emp_no=#{emp_no}
+	 </update>
 </mapper>
