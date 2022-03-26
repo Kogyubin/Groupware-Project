@@ -166,12 +166,16 @@
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
+									
+									<c:if test='${sessionScope.session_id == "admin" }'>
 									<ul>
-									<li><a href="#">조직관리</a></li>
+										<li><a href="#">조직관리</a></li>
 											<ul>
-												<li><a href="${path}/user">사용자관리</a></li>
-												<li><a href="index.html">부서관리</a></li>
+												<li><a href="${path}/user">사원관리</a></li>
+												<li><a href="${path}/dept">부서관리</a></li>
 											</ul>
+										</c:if>
+									
 										<li><a href="generic.html">전자결재</a></li>
 											<ul>
 												<li><a href="signdetail">기안하기</a></li>
@@ -179,6 +183,7 @@
 												<li><a href="#">결재할(한)문서</a></li>
 											</ul>
 										<li><a href="elements.html">게시판</a></li>
+									
 <!-- 										<li> -->
 <!-- 											<span class="opener">Submenu</span> -->
 <!-- 											<ul> -->

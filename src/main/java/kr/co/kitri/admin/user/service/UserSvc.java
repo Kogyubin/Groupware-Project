@@ -7,8 +7,10 @@ import kr.co.kitri.member.vo.MemberVO;
 public interface UserSvc {
 	
 	public boolean addUser(MemberVO mvo);
+//	public void addUser(MemberVO mvo);
 	public List<?> selectUserListWithDept(SearchVO param);
 	public MemberVO selectUserOne(int emp_no);
+	public String selectUserID(String emp_id);
 	public boolean deleteUser(int emp_no);
 	
 }

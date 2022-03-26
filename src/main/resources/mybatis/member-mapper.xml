@@ -7,7 +7,8 @@
 
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO emp
-		VALUES (#{emp_no}, #{emp_id}, #{emp_pw}, #{dept_no}, #{hiredate}, #{position})
+		(emp_no, emp_name, emp_id, dept_no, hiredate, position)
+		VALUES (#{emp_no}, #{emp_name}, #{emp_id}, #{dept_no}, #{hiredate}, #{position})
 	</insert>
 	
 	<select id="selectSigninMember" parameterType="member" resultType="int">
@@ -18,12 +19,33 @@
 	</select>
 	
 	 <select id="selectUserOne" parameterType="int" resultType="member">
-	 	SELECT * FROM emp WHERE emp_no=#{emp_no}
+	 	SELECT emp_no, emp_name, emp_id, dept_no, TO_CHAR(hiredate, 'YYYY/MM/DD') hiredate, position FROM emp WHERE emp_no=#{emp_no}
 	 </select>
+	 
+	 <select id="selectUserID" parameterType="String" resultType="String">
+	 	SELECT emp_id
+	 	FROM emp
+	 	WHERE deleteflag='N'
+	 	AND emp_id=#{emp_id}
+	 
+	 </select>
+	 
+	 <update id="updateUser" parameterType="member">
+	 	UPDATE emp
+	 	SET emp_name=#{emp_name},
+	 		emp_id=#{emp_id},
+	 		dept_no=#{dept_no},
+	 		hiredate=#{hiredate},
+	 		position=#{position}
+	 	WHERE deleteflag='N'
+	 	AND emp_no=#{emp_no}
+	</update>
 	 
 	 <update id="deleteUser" parameterType="member">
 	 	UPDATE emp
 	 	SET deleteflag = 'Y'
 	 	WHERE emp_no=#{emp_no}
 	 </update>
+	 
+	 
 </mapper>

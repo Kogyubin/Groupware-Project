@@ -27,20 +27,20 @@
 			return;
 
 		$.ajax({
-			url : "userList",
+			url : "deptList",
 			type : "post",
 			data : {
 				deptno : node.data.key
 			}
 		}).done(function(result) {
-			$("#userlist4Users").html(result);
+			$("#deptList").html(result);
 		});
 	}
 
 	var action = '';
 	var url = '';
 	var type = '';
-	var empno = 0;
+	var deptno = 0;
 
 	$(document).ready(function() {
 
@@ -96,7 +96,7 @@
 		});
 	});
 
-	//사원 디테일
+	//부서 디테일
 	function fn_UserRead(emp_no) {
 		$.ajax({
 			url : "${path}/userRead",
@@ -120,7 +120,7 @@
 		})
 	}
 
-	//사원 삭제
+	//부서 삭제
 	function fn_UserDelete(emp_no) {
 
 		let deleteOk = confirm("정말 삭제하시겠습니까?");
@@ -146,7 +146,7 @@
 
 </head>
 <body>
-	<h2>사원 관리</h2>
+	<h2>부서 관리</h2>
 
 
 	<div id="app" class="container">
@@ -163,20 +163,27 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-lg-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div>사원리스트</div>
-					</div>
-					<div class="panel-body maxHeight400" id="userlist4Users"></div>
+		</div>
+			<div class="panel panel-default col-lg-6" >
+                <div class="panel-body">
+	            <div class="row form-group">
+	            
+<!-- 	            <button id="addBtn" type="button" class="btn btn-info btn-sm" data-toggle="modal">추가</button>	 -->
 				</div>
+				<input name="deptno" id="deptno" type="hidden" value=""> 
+	            <div class="row form-group">
+	            	<div class="col-lg-9" >
+			 				<input name="deptnm" id="deptnm" style="width: 500px;" type="text" maxlength="100" value="" class="form-control">
+		            </div>
+				</div>
+				
+				 <div class="row form-group">
+	            	<button class="btn btn-outline btn-primary" onclick="fn_groupSave()" >등록</button>
+	            	<button class="btn btn-outline btn-primary" onclick="fn_groupDelete()" >삭제</button>
+				</div>
+				
 			</div>
 		</div>
-
-		<button id="addBtn" type="button" class="btn btn-info btn-sm"
-			data-toggle="modal">추가</button>
-
 	</div>
 	<!-- Modal -->
 	<div class="modal" id="myModal" role="dialog">

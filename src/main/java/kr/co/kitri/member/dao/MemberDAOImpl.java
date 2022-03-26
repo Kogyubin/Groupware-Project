@@ -24,9 +24,9 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int updateMember(MemberVO mvo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int updateUser(MemberVO mvo) {
+		
+		return sqlSession.insert("member.updateUser", mvo);
 	}
 
 	@Override
@@ -40,12 +40,13 @@ public class MemberDAOImpl implements MemberDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public int selectIdofMember(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String selectUserID(String emp_id) {
+		
+		return sqlSession.selectOne("selectUserID", emp_id);
 	}
+
 
 	@Override
 	public int selectSigninMember(MemberVO mvo) {
@@ -61,6 +62,8 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO selectUserOne(int emp_no) {
 		return sqlSession.selectOne("member.selectUserOne", emp_no);
 	}
+
+	
 	
 	
 

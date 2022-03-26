@@ -52,7 +52,22 @@ public class UserSvcImpl implements UserSvc {
 		return flag;
 		
 	}
-	
+
+//	@Override
+//	public void addUser(MemberVO mvo) {
+//		if (Integer.toString(mvo.getEmp_no()) == null || "".equals(mvo.getEmp_no())) {
+//				mdao.insertMember(mvo);
+//			}else {
+//				mdao.updateUser(mvo);
+//			}
+//		
+//	}
+
+	@Override
+	public String selectUserID(String emp_id) {
+		
+		return mdao.selectUserID(emp_id);
+	}
 	
 
 }

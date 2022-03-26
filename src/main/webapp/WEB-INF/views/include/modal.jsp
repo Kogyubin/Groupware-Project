@@ -11,6 +11,7 @@
 <script src="resources/assets/js/dynatree/jquery.dynatree.js"></script>
 <link href="resources/assets/js/dynatree/ui.dynatree.css" rel="stylesheet"/> 
 <script src="resources/assets/js/dynatree/project9.js"></script>   
+<link rel="stylesheet" href="resources/assets/css/fontawesome-all.min.css">
 
  
  

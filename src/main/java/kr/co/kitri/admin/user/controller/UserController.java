@@ -82,8 +82,21 @@ public class UserController {
      * 사원저장.
 	 * @throws IOException 
      */
+   
 	@RequestMapping("/addUserSave")
 	@ResponseBody
+//	public String addUserSave(MemberVO mvo, Model model, HttpServletResponse res) {
+//		
+//		if (Integer.toString(mvo.getEmp_no()) == null || "".equals(mvo.getEmp_no())) {
+//			String emp_id= usvc.selectUserID(emp_id);
+//			if(emp_id !=null) {
+//				return "admin/blank";
+//			}
+//		}
+//		usvc.addUser(mvo);
+//		return  popupUsersByDept(model, mvo.getDept_no());
+//	}
+//	}
 	public boolean addUserSave(MemberVO mvo, Model model, HttpServletResponse res) throws IOException {
 		System.out.println("addusersave");
 		boolean flag = usvc.addUser(mvo);
@@ -94,26 +107,28 @@ public class UserController {
 		
 		return flag;
 	}
-	
+//	
 	/**
      * 사원 디테일.
      */
 	@RequestMapping("/userRead")
 	@ResponseBody
-	 public void userRead(int emp_no) {
+	 public MemberVO userRead(int emp_no) {
 		
 //		String emp_no = request.getParameter("emp_no");
 		MemberVO mvo = usvc.selectUserOne(emp_no);
+		
+		return mvo;
 	}
 	
 	/**
      * 사원 삭제.
      */
-//	@RequestMapping("/userDelete")
-//	@ResponseBody
-//	  public boolean userDelete(Model model, int emp_no) {
-//		  boolean flag = usvc.deleteUser(emp_no);
-//		 
-//		  return flag;
-//	  }
+	@RequestMapping("/userDelete")
+	@ResponseBody
+	  public String userDelete(HttpServletRequest request,ModelMap modelMap, int emp_no, SearchVO searchVO) {
+		  usvc.deleteUser(emp_no);
+		 
+		  return popupUsers4Users(request, searchVO, modelMap);
+	  }
 }
