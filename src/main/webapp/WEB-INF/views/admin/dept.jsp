@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
-<%@include file="../include/header.jsp"%>
-<%@include file="../include/modal.jsp"%>
+<%-- <%@include file="../include/header.jsp"%> --%>
+<%-- <%@include file="../include/modal.jsp"%> --%>
 
 <!DOCTYPE html>
 <html>
@@ -124,28 +124,29 @@
 	function fn_UserDelete(emp_no) {
 
 		let deleteOk = confirm("정말 삭제하시겠습니까?");
-		
-		if(!deleteOk){
+
+		if (!deleteOk) {
 			return;
 		}
-		
+
 		$.ajax({
 			url : "${path}/userDelete",
 			type : "post",
 			data : {
 				emp_no : emp_no,
-// 				dept_no : selectedNode.data.key
+			// 				dept_no : selectedNode.data.key
 			},
 			success : function(result) {
 				$("#userlist4Users").html(result);
 			}
 		});
-		
+
 	}
 </script>
 
 </head>
 <body>
+
 	<h2>부서 관리</h2>
 
 
@@ -164,24 +165,27 @@
 				</div>
 			</div>
 		</div>
-			<div class="panel panel-default col-lg-6" >
-                <div class="panel-body">
-	            <div class="row form-group">
-	            
-<!-- 	            <button id="addBtn" type="button" class="btn btn-info btn-sm" data-toggle="modal">추가</button>	 -->
+		<div class="panel panel-default col-lg-6">
+			<div class="panel-body">
+				<div class="row form-group">
+
+					<!-- 	            <button id="addBtn" type="button" class="btn btn-info btn-sm" data-toggle="modal">추가</button>	 -->
 				</div>
-				<input name="deptno" id="deptno" type="hidden" value=""> 
-	            <div class="row form-group">
-	            	<div class="col-lg-9" >
-			 				<input name="deptnm" id="deptnm" style="width: 500px;" type="text" maxlength="100" value="" class="form-control">
-		            </div>
+				<input name="deptno" id="deptno" type="hidden" value="">
+				<div class="row form-group">
+					<div class="col-lg-9">
+						<input name="deptnm" id="deptnm" style="width: 500px;" type="text"
+							maxlength="100" value="" class="form-control">
+					</div>
 				</div>
-				
-				 <div class="row form-group">
-	            	<button class="btn btn-outline btn-primary" onclick="fn_groupSave()" >등록</button>
-	            	<button class="btn btn-outline btn-primary" onclick="fn_groupDelete()" >삭제</button>
+
+				<div class="row form-group">
+					<button class="btn btn-outline btn-primary"
+						onclick="fn_groupSave()">등록</button>
+					<button class="btn btn-outline btn-primary"
+						onclick="fn_groupDelete()">삭제</button>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -210,10 +214,10 @@
 							<td>ID</td>
 							<td><input class="form-control" id="empId" type="text"></td>
 						</tr>
-<!-- 						<tr> -->
-<!-- 							<td>PW</td> -->
-<!-- 							<td><input class="form-control" id="empPw" type="text"></td> -->
-<!-- 						</tr> -->
+						<!-- 						<tr> -->
+						<!-- 							<td>PW</td> -->
+						<!-- 							<td><input class="form-control" id="empPw" type="text"></td> -->
+						<!-- 						</tr> -->
 						<tr>
 							<td>부서번호</td>
 							<td><input class="form-control" id="deptNo" type="text"></td>

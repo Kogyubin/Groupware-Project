@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
-<%@include file="../include/header.jsp"%>
-<%@include file="../include/modal.jsp"%>
 
+<%-- <%@include file="../include/header.jsp"%> --%>
+<%-- <%@include file="../include/modal.jsp"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,28 +123,29 @@
 	function fn_UserDelete(emp_no) {
 
 		let deleteOk = confirm("정말 삭제하시겠습니까?");
-		
-		if(!deleteOk){
+
+		if (!deleteOk) {
 			return;
 		}
-		
+
 		$.ajax({
 			url : "${path}/userDelete",
 			type : "post",
 			data : {
 				emp_no : emp_no,
-// 				dept_no : selectedNode.data.key
+			// 				dept_no : selectedNode.data.key
 			},
 			success : function(result) {
 				$("#userlist4Users").html(result);
 			}
 		});
-		
+
 	}
 </script>
 
 </head>
 <body>
+
 	<h2>사원 관리</h2>
 
 
@@ -203,10 +203,10 @@
 							<td>ID</td>
 							<td><input class="form-control" id="empId" type="text"></td>
 						</tr>
-<!-- 						<tr> -->
-<!-- 							<td>PW</td> -->
-<!-- 							<td><input class="form-control" id="empPw" type="text"></td> -->
-<!-- 						</tr> -->
+						<!-- 						<tr> -->
+						<!-- 							<td>PW</td> -->
+						<!-- 							<td><input class="form-control" id="empPw" type="text"></td> -->
+						<!-- 						</tr> -->
 						<tr>
 							<td>부서번호</td>
 							<td><input class="form-control" id="deptNo" type="text"></td>
@@ -228,5 +228,7 @@
 			</div>
 		</div>
 	</div>
+
+
 </body>
 </html>

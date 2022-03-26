@@ -2,27 +2,26 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="resources/assets/css/metisMenu.min.css" rel="stylesheet">
-<link href="resources/assets/css/sb-admin-2.css" rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
-	integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
-	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
-<script src="resources/assets/js/bootstrap.min.js"></script>
-<script src="resources/assets/js/metisMenu.min.js"></script>
-<script src="resources/assets/js/sb-admin-2.js"></script>
-<script src="resources/assets/js/dynatree/jquery.dynatree.js"></script>
-<link href="resources/assets/js/dynatree/ui.dynatree.css"
-	rel="stylesheet" />
-<script src="resources/assets/js/dynatree/project9.js"></script>
+<!-- <link href="resources/assets/css/metisMenu.min.css" rel="stylesheet"> -->
+<!-- <link href="resources/assets/css/sb-admin-2.css" rel="stylesheet"> -->
+<%-- <script --%>
+<%-- 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --%>
+<%-- <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" --%>
+<%-- 	integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" --%>
+<%-- 	crossorigin="anonymous"></script> --%>
+<!-- <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css"> -->
+<%-- <script src="resources/assets/js/bootstrap.min.js"></script> --%>
+<%-- <script src="resources/assets/js/metisMenu.min.js"></script> --%>
+<%-- <script src="resources/assets/js/sb-admin-2.js"></script> --%>
+<%-- <script src="resources/assets/js/dynatree/jquery.dynatree.js"></script> --%>
+<!-- <link href="resources/assets/js/dynatree/ui.dynatree.css" -->
+<!-- 	rel="stylesheet" /> -->
+<%-- <script src="resources/assets/js/dynatree/project9.js"></script> --%>
 
 
 <script>
@@ -33,11 +32,11 @@ function fn_formSubmit(){
 
 </head>
 <body>
- <div id="wrapper">
+ <div>
 
 		
 		<form role="form" id="form1" name="form1"  method="post">
-        <div id="page-wrapper">
+        <div>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header"><i class="fa fa-edit fa-fw"></i> 결제 받을(은) 문서</h1>

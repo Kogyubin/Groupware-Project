@@ -7,21 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="resources/assets/css/metisMenu.min.css" rel="stylesheet">
-<link href="resources/assets/css/sb-admin-2.css" rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
-	integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
-	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
-<script src="resources/assets/js/bootstrap.min.js"></script>
-<script src="resources/assets/js/metisMenu.min.js"></script>
-<script src="resources/assets/js/sb-admin-2.js"></script>
-<script src="resources/assets/js/dynatree/jquery.dynatree.js"></script>
-<link href="resources/assets/js/dynatree/ui.dynatree.css"
-	rel="stylesheet" />
-<script src="resources/assets/js/dynatree/project9.js"></script>
+<!-- <link href="resources/assets/css/metisMenu.min.css" rel="stylesheet"> -->
+<!-- <link href="resources/assets/css/sb-admin-2.css" rel="stylesheet"> -->
+<!-- <script -->
+<!-- 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" -->
+<!-- 	integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" -->
+<!-- 	crossorigin="anonymous"></script> -->
+<!-- <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css"> -->
+<!-- <script src="resources/assets/js/bootstrap.min.js"></script> -->
+<!-- <script src="resources/assets/js/metisMenu.min.js"></script> -->
+<!-- <script src="resources/assets/js/sb-admin-2.js"></script> -->
+<!-- <script src="resources/assets/js/dynatree/jquery.dynatree.js"></script> -->
+<!-- <link href="resources/assets/js/dynatree/ui.dynatree.css" -->
+<!-- 	rel="stylesheet" /> -->
+<!-- <script src="resources/assets/js/dynatree/project9.js"></script> -->
 <script src="resources/assets/js/ckeditor/ckeditor.js"></script>
 <script>
 	//결재 경로
@@ -69,38 +69,41 @@
 					.appendTo(signArea);
 		}
 	}
-	
-	
-	
-	function fn_tempSubmit(){
+
+	function fn_tempSubmit() {
 		CKEDITOR.instances["doccontents"].updateElement();
 
-		if ( ! chkInputValue("#doctitle", "제목")) return false;
-		
+		if (!chkInputValue("#doctitle", "제목"))
+			return false;
+
 		$("#docstatus").val("0");
 		$("#form1").submit();
-	} 
-	
-	window.onload =function() {
-		  CKEDITOR.replace( 'doccontents', { 'filebrowserUploadUrl': 'upload4ckeditor'});
-	}	  
+	}
 
-	function fn_formSubmit(){
+	window.onload = function() {
+		CKEDITOR.replace('doccontents', {
+			'filebrowserUploadUrl' : 'upload4ckeditor'
+		});
+	}
+
+	function fn_formSubmit() {
 		CKEDITOR.instances["doccontents"].updateElement();
 
-		if ( ! chkInputValue("#doctitle", "제목")) return false;
-		if ( ! chkInputValue("#doccontents", "내용")) return false;
-		
+		if (!chkInputValue("#doctitle", "제목"))
+			return false;
+		if (!chkInputValue("#doccontents", "내용"))
+			return false;
+
 		$("#form1").submit();
-	} 
+	}
 </script>
 
 </head>
 <body>
 
-	<div id="wrapper">
+	<div>
 
-		<div id="page-wrapper">
+		<div>
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
@@ -113,7 +116,7 @@
 			<!-- /.row -->
 			<div class="row">
 				<div class="col-lg-9"></div>
-				
+
 				<div class="col-lg-1">
 					<button class="btn btn-outline btn-primary"
 						onclick="fn_formSubmit()">결재상신</button>
@@ -151,8 +154,7 @@
 					</c:forEach>
 				</div>
 				<div class="signTitle">
-					<br>결<br>
-					<br>재
+					<br>결<br> <br>재
 				</div>
 			</div>
 			<c:if test="${cnt>0}">
@@ -179,8 +181,7 @@
 						</c:forEach>
 					</div>
 					<div class="signTitle">
-						<br>합<br>
-						<br>의
+						<br>합<br> <br>의
 					</div>
 				</div>
 			</c:if>
@@ -209,9 +210,9 @@
 							<div class="row form-group">
 								<label class="col-lg-1">내용</label>
 								<div class="col-lg-11">
-									<textarea class="form-control" id="doccontents"
-										name="doccontents"><c:out
-											value="${signDocInfo.doccontents}" /></textarea>
+									<textarea class="form-control" id="doccontents"	name="doccontents">
+										<c:out value="${signDocInfo.doccontents}" />
+									</textarea>
 								</div>
 							</div>
 						</div>
