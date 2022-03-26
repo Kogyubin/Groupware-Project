@@ -22,6 +22,7 @@
 <link href="resources/assets/js/dynatree/ui.dynatree.css"
 	rel="stylesheet" />
 <script src="resources/assets/js/dynatree/project9.js"></script>
+<script src="resources/assets/js/ckeditor/ckeditor.js"></script>
 <script>
 	//결재 경로
 	function signPath() {
@@ -68,6 +69,30 @@
 					.appendTo(signArea);
 		}
 	}
+	
+	
+	
+	function fn_tempSubmit(){
+		CKEDITOR.instances["doccontents"].updateElement();
+
+		if ( ! chkInputValue("#doctitle", "제목")) return false;
+		
+		$("#docstatus").val("0");
+		$("#form1").submit();
+	} 
+	
+	window.onload =function() {
+		  CKEDITOR.replace( 'doccontents', { 'filebrowserUploadUrl': 'upload4ckeditor'});
+	}	  
+
+	function fn_formSubmit(){
+		CKEDITOR.instances["doccontents"].updateElement();
+
+		if ( ! chkInputValue("#doctitle", "제목")) return false;
+		if ( ! chkInputValue("#doccontents", "내용")) return false;
+		
+		$("#form1").submit();
+	} 
 </script>
 
 </head>

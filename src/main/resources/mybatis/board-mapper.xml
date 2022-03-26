@@ -5,14 +5,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="board">
-	<select id="selectBoards" resultType="board">
+<!-- 	<select id="selectBoards" resultType="board"> -->
 	
-		select board_no, title, emp_no, bo_regdate, visit_cnt from BOARD order by board_no desc
-	</select>
+<!-- 		select board_no, title, emp_no, bo_regdate, visit_cnt from BOARD order by board_no desc -->
+<!-- 	</select> -->
 	
-	<insert id="insertBoard" parameterType="board">
-		insert into BOARD (board_no,title, content, emp_no,bo_regdate,visit_cnt)
-		values (board_board_no_seq.nextval, #{title} , #{content}, #{emp_no}, sysdate,0)
-	</insert>
+<!-- 	<insert id="insertBoard" parameterType="board"> -->
+<!-- 		insert into BOARD (board_no,title, content, emp_no,bo_regdate,visit_cnt) -->
+<!-- 		values (board_board_no_seq.nextval, #{title} , #{content}, #{emp_no}, sysdate,0) -->
+<!-- 	</insert> -->
 	
 </mapper>
