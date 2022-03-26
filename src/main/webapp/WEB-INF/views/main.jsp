@@ -169,22 +169,15 @@
 									<ul>
 										<li><a href="${path}/user">사용자관리</a></li>
 										<li><a href="index.html">부서관리</a></li>
-										<li><a href="generic.html">전자결재</a></li>
+										<li><a href="elements.html">게시판</a></li>
+										<li>
+											<span class="opener" href="generic.html">전자결재</span>
 											<ul>
 												<li><a href="signdetail">기안하기</a></li>
-												<li><a href="#">결재받을(은)문서</a></li>
-												<li><a href="#">결재할(한)문서</a></li>
+												<li><a href="signListTobe">결재받을(은)문서</a></li>
+<!-- 												<li><a href="#">결재할(한)문서</a></li> -->
 											</ul>
-										<li><a href="elements.html">게시판</a></li>
-<!-- 										<li> -->
-<!-- 											<span class="opener">Submenu</span> -->
-<!-- 											<ul> -->
-<!-- 												<li><a href="#">Lorem Dolor</a></li> -->
-<!-- 												<li><a href="#">Ipsum Adipiscing</a></li> -->
-<!-- 												<li><a href="#">Tempus Magna</a></li> -->
-<!-- 												<li><a href="#">Feugiat Veroeros</a></li> -->
-<!-- 											</ul> -->
-<!-- 										</li> -->
+										</li>
 <!-- 										<li><a href="#">Etiam Dolore</a></li> -->
 <!-- 										<li><a href="#">Adipiscing</a></li> -->
 <!-- 										<li> -->
