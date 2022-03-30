@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header id="header">
-		<a href="index.html" class="logo">
+		<a href="/kitri/main" class="logo">
 			<strong>SCKITRI</strong>
 			GROUPWARE</a>
 		<ul class="icons">

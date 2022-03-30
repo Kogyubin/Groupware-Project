@@ -116,6 +116,9 @@ a {
     color: #f56a6a !important; }
     a:hover strong {
       color: inherit; }
+/*   a { font-family: 'Gowun Dodum', sans-serif; */
+/*   		font-size: 20px; */
+/*   } */
 
 strong, b {
   color: #3d4449;
@@ -899,7 +902,7 @@ ul.pagination {
     color: inherit;
     cursor: pointer;
     display: block;
-    font-size: 0.9em;
+/*     font-size: 0.9em; */
     padding: 0.625em 0; }
     #menu ul a:hover, #menu ul span:hover {
       color: #f56a6a; }
@@ -950,8 +953,8 @@ ul.pagination {
     display: none;
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
-    #menu > ul > li > ul a, #menu > ul > li > ul span {
-      font-size: 0.8em; }
+/*     #menu > ul > li > ul a, #menu > ul > li > ul span { */
+/*       font-size: 0.8em; } */
     #menu > ul > li > ul > li {
       margin: 0.125em 0 0 0;
       padding: 0.125em 0 0 0; }
@@ -963,6 +966,11 @@ ul.pagination {
     .head-logout{
     	color: red;
     	font-size: 1em;
+    }
+    
+    span {font-family: 'Gowun Dodum', sans-serif;
+    font-size: 16px;
+    
     }
     
     

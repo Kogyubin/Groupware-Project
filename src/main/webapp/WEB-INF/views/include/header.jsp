@@ -14,6 +14,14 @@
 <script src="resources/assets/js/dynatree/jquery.dynatree.js"></script>
 <link href="resources/assets/js/dynatree/ui.dynatree.css" rel="stylesheet"/> 
 <script src="resources/assets/js/dynatree/project9.js"></script>   
+<link href="resources/assets/css/metisMenu.min.css" rel="stylesheet">
+<script src="resources/assets/js/metisMenu.min.js"></script>
 <link rel="stylesheet" href="resources/assets/css/fontawesome-all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet"> -->
 
  

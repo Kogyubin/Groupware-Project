@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
 <!-- <link href="resources/assets/css/metisMenu.min.css" rel="stylesheet"> -->
 <!-- <link href="resources/assets/css/sb-admin-2.css" rel="stylesheet"> -->
 <!-- <script -->
@@ -22,6 +23,8 @@
 <!-- <link href="resources/assets/js/dynatree/ui.dynatree.css" -->
 <!-- 	rel="stylesheet" /> -->
 <!-- <script src="resources/assets/js/dynatree/project9.js"></script> -->
+<link href="resources/assets/css/sign.css" rel="stylesheet" type="text/css">
+<!--  <link href="resources/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 <script src="resources/assets/js/ckeditor/ckeditor.js"></script>
 <script>
 	//결재 경로
@@ -80,11 +83,11 @@
 		$("#form1").submit();
 	}
 
-	window.onload = function() {
+	$(function() {
 		CKEDITOR.replace('doccontents', {
 			'filebrowserUploadUrl' : 'upload4ckeditor'
 		});
-	}
+	});
 
 	function fn_formSubmit() {
 		CKEDITOR.instances["doccontents"].updateElement();
@@ -226,7 +229,6 @@
 	</div>
 	<!-- /#wrapper -->
 
-	<div id="popupUsers" class="modal fade bs-example-modal-lg"
-		tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"></div>
+	<div id="popupUsers" class="modal fade bs-example-modal-lg"	tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"></div>
 </body>
 </html>
