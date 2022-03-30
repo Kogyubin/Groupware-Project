@@ -27,11 +27,11 @@
 						</ul>
 					</c:if>
 					
-					<li><a  href="elements.html">게시판</a></li>
+					<li><span><a  href="elements.html">게시판</a></span></li>
 					<li><span class="opener" >전자결재</span>
 						<ul>
-							<li><a onclick="contentAdd('${path}/signdetail')"  >기안하기</a></li>
-							<li><a onclick="contentAdd('${path}/signListTobe')" >결재받을(은)문서</a></li>
+							<li><span><a onclick="contentAdd('${path}/signdetail')"  >기안하기</a></span></li>
+							<li><span><a onclick="contentAdd('${path}/signListTobe')" >결재받을(은)문서</a></span></li>
 							<!--                                     <li><a href="#">결재할(한)문서</a></li> -->
 						</ul>
 				</ul>
@@ -40,9 +40,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">
-				&copy; Untitled. All rights reserved. Demo Images: <a
-					href="https://unsplash.com">Unsplash</a>. Design: <a
-					href="https://html5up.net">HTML5 UP</a>.
+				&copy; Untitled. All rights reserved. Demo Images:
 			</p>
 		</footer>
 

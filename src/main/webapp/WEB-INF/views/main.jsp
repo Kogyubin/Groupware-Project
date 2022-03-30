@@ -22,6 +22,7 @@
 			
 		});
 	}
+	
 
 
 </script>
@@ -36,9 +37,8 @@
 
 				<!-- Header -->
 				<%@include file="common/head.jsp"%>
+				<%@include file="common/calendar.jsp"%>
 
-
-				<section id="content">메인화면</section>
 
 			</div>
 		</div>
@@ -49,7 +49,8 @@
 
 	<!-- Scripts -->
 	<%@include file="common/script.jsp"%>
-
+	
+	
 </body>
 
 </html>
