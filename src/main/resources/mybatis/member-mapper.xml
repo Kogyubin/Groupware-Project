@@ -7,8 +7,8 @@
 
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO emp
-		(emp_no, emp_name, emp_id, dept_no, hiredate, position)
-		VALUES (#{emp_no}, #{emp_name}, #{emp_id}, #{dept_no}, #{hiredate}, #{position})
+		(emp_no, emp_name, emp_id, hiredate, position, deleteflag)
+		VALUES (#{emp_no}, #{emp_name}, #{emp_id}, #{hiredate}, #{position}, 'N')
 	</insert>
 	
 	<select id="selectSigninMember" parameterType="member" resultType="int">
@@ -19,7 +19,7 @@
 	</select>
 	
 	 <select id="selectUserOne" parameterType="int" resultType="member">
-	 	SELECT emp_no, emp_name, emp_id, dept_no, TO_CHAR(hiredate, 'YYYY/MM/DD') hiredate, position FROM emp WHERE emp_no=#{emp_no}
+	 	SELECT emp_no, emp_name, emp_id, dept_no, TO_CHAR(hiredate, 'YYYY-MM-DD') hiredate, position FROM emp WHERE emp_no=#{emp_no}
 	 </select>
 	 
 	 <select id="selectUserID" parameterType="String" resultType="String">
@@ -34,7 +34,6 @@
 	 	UPDATE emp
 	 	SET emp_name=#{emp_name},
 	 		emp_id=#{emp_id},
-	 		dept_no=#{dept_no},
 	 		hiredate=#{hiredate},
 	 		position=#{position}
 	 	WHERE deleteflag='N'

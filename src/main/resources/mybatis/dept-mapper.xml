@@ -9,6 +9,19 @@
          ORDER BY DEPT_NO  
     </select> 
     
+    <insert id="insertDepartment" parameterType="department">
+    	INSERT INTO dept
+    	(dept_no, dept_name, parentno, deleteflag)
+    	VALUES (#{deptno}, #{deptnm}, #{parentno}, 'N')
+    </insert>
+    
+    <select id="selectDepartmentOne" parameterType="String" resultType="department">
+    	SELECT dept_no, dept_name
+    	FROM dept
+    	WHERE deleteflag = 'N' AND dept_no=#{deptno}
+    
+    </select>
+    
 <!--     <insert id="insertDepartment" parameterType="gu.admin.organ.DepartmentVO" > -->
 <!--         <selectKey resultType="String" keyProperty="deptno" order="BEFORE"> -->
 <!--             SELECT IFNULL(MAX(DEPTNO),0)+1 FROM COM_DEPT -->

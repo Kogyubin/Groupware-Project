@@ -48,6 +48,7 @@ public class UserController {
         String treeStr = tm.makeTreeByHierarchy(listview);
         
         model.addAttribute("treeStr", treeStr);
+        model.addAttribute("listview", listview);
 		
 		return "admin/user";
 	}
@@ -85,18 +86,7 @@ public class UserController {
    
 	@RequestMapping("/addUserSave")
 	@ResponseBody
-//	public String addUserSave(MemberVO mvo, Model model, HttpServletResponse res) {
-//		
-//		if (Integer.toString(mvo.getEmp_no()) == null || "".equals(mvo.getEmp_no())) {
-//			String emp_id= usvc.selectUserID(emp_id);
-//			if(emp_id !=null) {
-//				return "admin/blank";
-//			}
-//		}
-//		usvc.addUser(mvo);
-//		return  popupUsersByDept(model, mvo.getDept_no());
-//	}
-//	}
+
 	public boolean addUserSave(MemberVO mvo, Model model, HttpServletResponse res) throws IOException {
 		System.out.println("addusersave");
 		boolean flag = usvc.addUser(mvo);
@@ -122,13 +112,25 @@ public class UserController {
 	}
 	
 	/**
+     * 사원 수정.
+     */
+	@RequestMapping("/userUpdate")
+	@ResponseBody
+	  public boolean userUpdate(HttpServletRequest request,ModelMap modelMap, MemberVO mvo) {
+		  boolean flag = usvc.updateUser(mvo);
+		 
+		  return flag;
+	  }
+	
+	
+	/**
      * 사원 삭제.
      */
 	@RequestMapping("/userDelete")
 	@ResponseBody
-	  public String userDelete(HttpServletRequest request,ModelMap modelMap, int emp_no, SearchVO searchVO) {
-		  usvc.deleteUser(emp_no);
+	  public boolean userDelete(HttpServletRequest request,ModelMap modelMap, int emp_no) {
+		  boolean flag = usvc.deleteUser(emp_no);
 		 
-		  return popupUsers4Users(request, searchVO, modelMap);
+		  return flag;
 	  }
 }

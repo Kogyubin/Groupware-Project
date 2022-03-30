@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
  	<typeAlias alias="member" type="kr.co.kitri.member.vo.MemberVO" />
- 	</typeAliases>	
+ 	<typeAlias alias="department" type="kr.co.kitri.admin.organ.DepartmentVO" />
+ 	</typeAliases>	 
 </configuration>
  

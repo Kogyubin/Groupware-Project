@@ -19,20 +19,21 @@ public class DeptSvc {
     /**
      * 부서저장.     
      */
-    public void insertDepartment(DepartmentVO param) {
-        if ("".equals(param.getParentno())) {
-            param.setParentno(null); 
-        }
-            
-        if (param.getDeptno() == null || "".equals(param.getDeptno())) {
-             sqlSession.insert("insertDepartment", param);
-        } else {
-             sqlSession.insert("updateDepartment", param);
-        }
-    }
+    public boolean insertDepartment(DepartmentVO deptvo) {
+    	int result = sqlSession.insert("insertDepartment");
+		boolean flag = false;
+		if(result==0) {
+			flag=false;
+		}else {
+			flag=true;
+		}
+		
+		return flag;
+	
+	}
  
-    public DepartmentVO selectDepartmentOne(String param) {
-        return sqlSession.selectOne("selectDepartmentOne", param);
+    public DepartmentVO selectDepartmentOne(String deptnm) {
+        return sqlSession.selectOne("selectDepartmentOne", deptnm);
     }
 
     public void deleteDepartment(String param) {

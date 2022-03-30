@@ -14,13 +14,17 @@
 		<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
+				
 				<h2>Menu</h2>
 			</header>
 
 				<ul>
 					<c:if test='${sessionScope.session_id == "admin" }'>
-					<li><a onclick="contentAdd('${path}/user')">사용자관리</a></li>
-					<li><a onclick="contentAdd('${path}/dept')">부서관리</a></li>
+					<li><span class="opener" >조직관리</span>
+						<ul>
+							<li><a onclick="contentAdd('${path}/user')">사원관리</a></li>
+							<li><a onclick="contentAdd('${path}/dept')">부서관리</a></li>
+						</ul>
 					</c:if>
 					
 					<li><a  href="elements.html">게시판</a></li>

@@ -3,6 +3,7 @@
 
 <%-- <%@include file="../include/header.jsp"%> --%>
 <%-- <%@include file="../include/modal.jsp"%> --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,8 @@
 <title>SCKITRI</title>
 
 <script>
+	let selectedNode;
+	
 	$(function() {
 		$("#deptTree4Users").dynatree({
 			children : <c:out value="${treeStr}" escapeXml="false"/>,
@@ -25,6 +28,9 @@
 		if (node == null || node.data.key == 0)
 			return;
 
+// 		console.log(node.data.title);
+		selectedNode = node.data.key;
+		
 		$.ajax({
 			url : "userList",
 			type : "post",
@@ -45,28 +51,42 @@
 
 		//추가 버튼 클릭
 		$("#addBtn").click(function() {
+			if (selectedNode == null) {
+				alert("부서를 선택바랍니다.");
+				return;
+			}
 			action = 'create';
 			type = 'post'
 			$("#modal-title").text("추가");
+			$("#selectBox").val(selectedNode).prop("selected",true);
+			$("#empNo").val("");
+			$("#empNo").attr("readonly",false);
+			$("#empName").val("");
+			$("#empId").val("");
+			$("#hiredate").val("");
+			$("#hiredate").attr("readonly",false);
+			$("#position").val("");
+			
 			$("#myModal").modal();
+			
 
 		});
 
 		//Modal의 submit 버튼 클릭
 		$("#modalSubmit").click(function() {
-
+			
 			if (action == 'create') {
 				empno = 0;
 				url = '${path}/addUserSave';
 			} else if (action == 'modify') {
-				url = '${path}/addUserSave';
+				url = '${path}/userUpdate';
 			}
 
 			var data = {
 				emp_no : $("#empNo").val(),
 				emp_name : $("#empName").val(),
 				emp_id : $("#empId").val(),
-				dept_no : $("#deptNo").val(),
+				dept_no : $("#selectBox").val(selectedNode),
 				hiredate : $("#hiredate").val(),
 				position : $("#position").val()
 			};
@@ -79,16 +99,25 @@
 				data : data
 			}).done(function(result) {
 
-				if (result) {
-					alert("등록에 성공하였습니다.");
-				} else {
-					alert("등록에 실패하였습니다.");
+				
+				if (action == 'create') {
+					if (result) {
+						alert("등록에 성공하였습니다.");
+					} else {
+						alert("등록에 실패하였습니다.");
+					}
+				} else if (action == 'modify') {
+					if (result) {
+						alert("수정에 성공하였습니다.");
+					} else {
+						alert("수정에 실패하였습니다.");
+					}
 				}
+				
+				
+				
+				
 				$("#myModal").modal('toggle');
-
-			}).always(function() {
-
-				location.reload();
 
 			});
 
@@ -109,19 +138,20 @@
 				$("#empNo").attr("readonly", true);
 				$("#empName").val(result.emp_name);
 				$("#empId").val(result.emp_id);
-				$("#deptNo").val(result.dept_no);
+				$("#selectBox").val(selectedNode).prop("selected",true);
 				$("#hiredate").val(result.hiredate);
 				$("#hiredate").attr("readonly", true);
 				$("#position").val(result.position);
 
 				$("#myModal").modal();
+				action = "modify";
 			}
 		})
 	}
 
 	//사원 삭제
 	function fn_UserDelete(emp_no) {
-
+// 	console.log(event.currentTarget);
 		let deleteOk = confirm("정말 삭제하시겠습니까?");
 
 		if (!deleteOk) {
@@ -136,7 +166,13 @@
 			// 				dept_no : selectedNode.data.key
 			},
 			success : function(result) {
-				$("#userlist4Users").html(result);
+				
+				if (result) {
+					
+// 					$this.parent().remove();
+					alert("삭제가 완료되었습니다.");
+				}
+				
 			}
 		});
 
@@ -208,8 +244,15 @@
 						<!-- 							<td><input class="form-control" id="empPw" type="text"></td> -->
 						<!-- 						</tr> -->
 						<tr>
-							<td>부서번호</td>
-							<td><input class="form-control" id="deptNo" type="text"></td>
+							<td>부서명</td>
+<!-- 							<td><input class="form-control" id="deptNm" type="text"></td> -->
+							<td>
+							<select id="selectBox" class="form-control">
+								<c:forEach var="deptList" items="${listview }">
+                                     <option value="${deptList.key }">${deptList.title }</option>
+                           		</c:forEach>
+							</select>
+							</td>
 						</tr>
 						<tr>
 							<td>입사일</td>

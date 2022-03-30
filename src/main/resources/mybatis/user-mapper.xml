@@ -10,7 +10,7 @@
     </select> 
     
     <select id="selectUserListWithDept" parameterType="kr.co.kitri.common.SearchVO" resultType="kr.co.kitri.member.vo.MemberVO">
-        SELECT e.EMP_NO, e.EMP_NAME, e.EMP_ID, e.DEPT_NO, d.DEPT_NAME, e.POSITION, e.HIREDATE
+        SELECT e.EMP_NO, e.EMP_NAME, e.EMP_ID, e.DEPT_NO, d.DEPT_NAME, e.POSITION, TO_CHAR(e.hiredate, 'YYYY-MM-DD') hiredate
           FROM EMP e
          INNER JOIN DEPT d ON d.DEPT_NO=e.DEPT_NO
          WHERE e.DELETEFLAG='N' AND d.DELETEFLAG='N'

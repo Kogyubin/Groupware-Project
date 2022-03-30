@@ -53,20 +53,23 @@ public class UserSvcImpl implements UserSvc {
 		
 	}
 
-//	@Override
-//	public void addUser(MemberVO mvo) {
-//		if (Integer.toString(mvo.getEmp_no()) == null || "".equals(mvo.getEmp_no())) {
-//				mdao.insertMember(mvo);
-//			}else {
-//				mdao.updateUser(mvo);
-//			}
-//		
-//	}
-
 	@Override
 	public String selectUserID(String emp_id) {
 		
 		return mdao.selectUserID(emp_id);
+	}
+
+	@Override
+	public boolean updateUser(MemberVO mvo) {
+		int result = mdao.updateUser(mvo);
+		boolean flag = false;
+		if(result==0) {
+			flag=false;
+		}else {
+			flag=true;
+		}
+		
+		return flag;
 	}
 	
 
