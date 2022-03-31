@@ -11,8 +11,20 @@
 	</select>
 	
 	<insert id="insertBoard" parameterType="board">
-		insert into BOARD (board_no,title, content, emp_no,bo_regdate,visit_cnt)
-		values (board_board_no_seq.nextval, #{title} , #{content}, #{emp_no}, sysdate,0)
+		insert into BOARD (board_no,title, content, emp_no,bo_regdate, visit_cnt)
+		values (board_board_no_seq.nextval, #{title} , #{content}, #{emp_no}, sysdate, 0)
 	</insert>
 	
+	<select id="readBoard" resultType="board" parameterType="int">
+		select  board_no, title, emp_no, content from BOARD where board_no=#{board_no}
+	</select>
+	<update id="updateBoard" parameterType="board">
+		update BOARD set title=#{title}, content=#{content}, bo_regdate=sysdate  where board_no=#{board_no}
+	</update>
+	<delete id="deleteBoard" parameterType="int">
+		delete from BOARD where board_no=#{board_no}
+	</delete>
+	<update id="cntUp" parameterType="board">
+		update BOARD set visit_cnt=(select visit_cnt+1 from BOARD where board_no=#{board_no}) where board_no=#{board_no}
+	</update>
 </mapper>
