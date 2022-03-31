@@ -22,8 +22,8 @@
 					<c:if test='${sessionScope.session_id == "admin" }'>
 					<li><span class="opener" >조직관리</span>
 						<ul>
-							<li><a onclick="contentAdd('${path}/user')">사원관리</a></li>
-							<li><a onclick="contentAdd('${path}/dept')">부서관리</a></li>
+							<li><span><a onclick="contentAdd('${path}/user')">사원관리</a></span></li>
+							<li><span><a onclick="contentAdd('${path}/dept')">부서관리</a></span></li>
 						</ul>
 					</c:if>
 					
@@ -34,13 +34,19 @@
 							<li><span><a onclick="contentAdd('${path}/signListTobe')" >결재받을(은)문서</a></span></li>
 							<!--                                     <li><a href="#">결재할(한)문서</a></li> -->
 						</ul>
+					<li><span class="opener" >메일</span>
+						<ul>
+							<li><span><a onclick="contentAdd('${path}/MailForm')"  >새 메일</a></span></li>
+							<li><span><a onclick="contentAdd('${path}/ReceiveMailRead')" >받은 메일</a></span></li>
+							<!--                                     <li><a href="#">결재할(한)문서</a></li> -->
+						</ul>	
 				</ul>
 		</nav>
 		
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">
-				&copy; Untitled. All rights reserved. Demo Images:
+				&copy; kitri group ware
 			</p>
 		</footer>
 
