@@ -36,38 +36,30 @@
 <!--          </if> -->
 <!--     </select>  -->
         
-   <sql id="includeSignDocTobe">
-        WHERE SD.DELETEFLAG='N' AND SD.USERNO=${userno}
-        <if test="searchExt1!=''">
-	        <if test="searchExt1==2">AND SD.DOCSTATUS IN (1,2)</if>        
-	        <if test="searchExt1!=2">AND SD.DOCSTATUS=${searchExt1}</if>        
-        </if>        
+<!--    <sql id="includeSignDocTobe"> -->
+<!--         WHERE SD.DELETEFLAG='N' AND SD.USERNO=${userno} -->
+<!--         <if test="searchExt1!=''"> -->
+<!-- 	        <if test="searchExt1==2">AND SD.DOCSTATUS IN (1,2)</if>         -->
+<!-- 	        <if test="searchExt1!=2">AND SD.DOCSTATUS=${searchExt1}</if>         -->
+<!--         </if>         -->
         
-        <if test="searchKeyword!=null and searchKeyword!='' and searchType!=''">
-            <foreach item="item" index="index" collection="searchTypeArr" separator=" OR " open="AND (" close=")">
-                 ${item} LIKE CONCAT('%', #{searchKeyword},'%' )
-            </foreach>
-        </if>               
-    </sql>
+<!--         <if test="searchKeyword!=null and searchKeyword!='' and searchType!=''"> -->
+<!--             <foreach item="item" index="index" collection="searchTypeArr" separator=" OR " open="AND (" close=")"> -->
+<!--                  ${item} LIKE CONCAT('%', #{searchKeyword},'%' ) -->
+<!--             </foreach> -->
+<!--         </if>                -->
+<!--     </sql> -->
 
-    <select id="selectSignDocTobeCount" resultType="Integer" parameterType="kr.co.kitri.common.SearchVO">
-        SELECT COUNT(*)
-          FROM SGN_DOC SD
-         <include refid="includeSignDocTobe"/>
-    </select> 
+<!--     <select id="selectSignDocTobeCount" resultType="Integer" parameterType="kr.co.kitri.common.SearchVO"> -->
+<!--         SELECT COUNT(*) -->
+<!--           FROM SGN_DOC SD -->
+
+<!--     </select>  -->
     
-    <select id="selectSignDocTobeList" resultType="kr.co.kitri.sign.vo.SignDocVO" parameterType="kr.co.kitri.common.SearchVO">
-        SELECT SD.DOCNO, DOCTITLE, SD.USERNO, USERNM, DOCSTEP, SD.DTNO, SDT.DTTITLE, DEPTNM
-        	 , DATE_FORMAT(UPDATEDATE,'%Y-%m-%d') UPDATEDATE, CODENM DOCSTATUS
-          FROM SGN_DOC SD
-         INNER JOIN COM_USER CU ON SD.USERNO=CU.USERNO
-         INNER JOIN SGN_DOCTYPE SDT ON SDT.DTNO=SD.DTNO
-         INNER JOIN COM_CODE CC ON CC.CODECD=SD.DOCSTATUS AND CLASSNO='2'
-         <include refid="includeSignDocTobe"/>
-         ORDER BY DOCNO DESC
-         <if test="rowStart != null">
-             LIMIT ${rowStart-1}, 10
-         </if>
+    <select id="selectSignDocTobeList" resultType="kr.co.kitri.sign.vo.SignDocVO" parameterType="String">
+        SELECT DOC_NO, DOC_TITLE, DOC_CONTENT, DOC_STATUS, DELETETAG, DOC_STEP, DOC_SIGN_PATH, DT_NO, EMP_NO, DEPT_NAME, DOC_REGDATE, DOC_UPDATE
+FROM DOC;
+         
     </select> 
             
 <!--     <insert id="insertSignDoc" parameterType="kr.co.kitri.sign.vo.SignDocVO"  useGeneratedKeys="true" keyProperty="docno"> -->

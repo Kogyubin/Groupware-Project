@@ -34,12 +34,12 @@
 							<li><span><a onclick="contentAdd('${path}/signListTobe')" >결재받을(은)문서</a></span></li>
 							<!--                                     <li><a href="#">결재할(한)문서</a></li> -->
 						</ul>
-					<li><span class="opener" >메일</span>
-						<ul>
-							<li><span><a onclick="contentAdd('${path}/MailForm')"  >새 메일</a></span></li>
-							<li><span><a onclick="contentAdd('${path}/ReceiveMailRead')" >받은 메일</a></span></li>
-							<!--                                     <li><a href="#">결재할(한)문서</a></li> -->
-						</ul>	
+<!-- 					<li><span class="opener" >메일</span> -->
+<!-- 						<ul> -->
+<%-- 							<li><span><a onclick="contentAdd('${path}/MailForm')"  >새 메일</a></span></li> --%>
+<%-- 							<li><span><a onclick="contentAdd('${path}/ReceiveMailRead')" >받은 메일</a></span></li> --%>
+<!-- 							                                    <li><a href="#">결재할(한)문서</a></li> -->
+<!-- 						</ul>	 -->
 				</ul>
 		</nav>
 		

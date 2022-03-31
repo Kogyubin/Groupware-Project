@@ -34,7 +34,7 @@ public class SignSvc {
         return sqlSession.selectOne("selectSignDocTobeCount", param);
     }
     
-    public List<?> selectSignDocTobeList(SearchVO param) {
+    public List<?> selectSignDocTobeList(SignDocVO param) {
         return sqlSession.selectList("selectSignDocTobeList", param);
     }
     /**

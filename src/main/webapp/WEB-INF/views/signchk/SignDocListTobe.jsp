@@ -39,7 +39,7 @@ function fn_formSubmit(){
         <div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><i class="fa fa-edit fa-fw"></i> 결제 받을(은) 문서</h1>
+                    <h1 class="page-header"><i class="fa fa-edit fa-fw"></i> 결재 받을(은) 문서</h1>
                 </div>
             </div>
 

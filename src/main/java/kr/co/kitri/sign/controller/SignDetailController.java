@@ -94,12 +94,9 @@ public class SignDetailController {
 	        return "sign/popupUsers4SignPath";
 	    }
 	    
-	    @RequestMapping(value = "/calender")
-	    public String calender(ModelMap modelMap) {
-	        
-	        return "common/calendar";
-	    }
+	  
 	    
+
 	    
 
 }

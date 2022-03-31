@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.co.kitri.common.SearchVO;
 import kr.co.kitri.etc.EtcSvc;
 import kr.co.kitri.sign.service.SignSvc;
+import kr.co.kitri.sign.vo.SignDocVO;
 
 @Controller 
 public class SignChkController {
@@ -28,21 +29,41 @@ public class SignChkController {
     /**
      * 결제 받을 문서 리스트.
      */
+//    @RequestMapping(value = "/signListTobe")
+//    public String signListTobe(HttpServletRequest request, SearchVO searchVO, ModelMap modelMap) {
+//        // 페이지 공통: alert
+////        String empno = request.getSession().getAttribute("empno").toString();
+////        
+////        etcSvc.setCommonAttribute(empno, modelMap);
+////    	
+////        // 
+////        searchVO.setEmpno(empno);
+////        searchVO.pageCalculate( signSvc.selectSignDocTobeCount(searchVO) ); // startRow, endRow
+//        List<?> listview  = signSvc.selectSignDocTobeList(searchVO);
+////        
+////        modelMap.addAttribute("searchVO", searchVO);
+////        modelMap.addAttribute("listview", listview);
+////        
+//        return "signchk/SignDocListTobe";
+//    }
+//   
+    
+    
     @RequestMapping(value = "/signListTobe")
-    public String signListTobe(HttpServletRequest request, SearchVO searchVO, ModelMap modelMap) {
+    public String signListTobe(HttpServletRequest request, SignDocVO signdocVO, ModelMap modelMap) {
         // 페이지 공통: alert
 //        String empno = request.getSession().getAttribute("empno").toString();
-//        
-//        etcSvc.setCommonAttribute(empno, modelMap);
-//    	
-//        // 
-//        searchVO.setEmpno(empno);
-//        searchVO.pageCalculate( signSvc.selectSignDocTobeCount(searchVO) ); // startRow, endRow
-//        List<?> listview  = signSvc.selectSignDocTobeList(searchVO);
-//        
-//        modelMap.addAttribute("searchVO", searchVO);
+////        
+////        etcSvc.setCommonAttribute(empno, modelMap);
+////    	
+////        // 
+////        searchVO.setEmpno(empno);
+////        searchVO.pageCalculate( signSvc.selectSignDocTobeCount(searchVO) ); // startRow, endRow
+//        List<?> listview  = signSvc.selectSignDocTobeList(signdocVO);
+////        
+//        modelMap.addAttribute("signdocVO", signdocVO);
 //        modelMap.addAttribute("listview", listview);
-        
+////        
         return "signchk/SignDocListTobe";
     }
     
