@@ -43,6 +43,7 @@
 	}
 
 	function fn_selectUsers(docsignpath) {
+		
 		$("#docsignpath").val(docsignpath);
 		$("#popupUsers").modal("hide");
 
@@ -121,8 +122,7 @@
 				<div class="col-lg-9"></div>
 
 				<div class="col-lg-1">
-					<button class="btn btn-outline btn-primary"
-						onclick="fn_formSubmit()">결재상신</button>
+					<button class="btn btn-outline btn-primary"	onclick="fn_formSubmit()">결재상신</button>
 				</div>
 				<div class="col-lg-1">
 					<button class="btn btn-outline btn-primary" onclick="signPath()">결재경로</button>
@@ -192,22 +192,17 @@
 			<div class="row" style="margin-top: 10px">
 				<form id="form1" name="form1" role="form" action="signDocSave"
 					method="post">
-					<input type="hidden" name="docno"
-						value="<c:out value="${signDocInfo.docno}"/>"> <input
-						type="hidden" name="docstatus" id="docstatus"
-						value="<c:out value="${signDocInfo.docstatus}"/>"> <input
-						type="hidden" name="dtno"
-						value="<c:out value="${signDocInfo.dtno}"/>"> <input
-						type="hidden" name="docsignpath" id="docsignpath"
-						value="<c:out value="${signDocInfo.docsignpath}"/>">
+					<input type="hidden" name="emp_no" >
+					<input type="hidden" name="docno"	value="<c:out value="${signDocInfo.docno}"/>"> 
+					<input type="hidden" name="docstatus" id="docstatus" value="<c:out value="${signDocInfo.docstatus}"/>">
+					<input type="hidden" name="dtno"value="<c:out value="${signDocInfo.dtno}"/>"> 
+					<input type="hidden" name="docsignpath" id="docsignpath" value="<c:out value="${signDocInfo.docsignpath}"/>">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="row form-group">
 								<label class="col-lg-1">제목</label>
 								<div class="col-lg-11">
-									<input type="text" class="form-control" id="doctitle"
-										name="doctitle" maxlength="50"
-										value="<c:out value="${signDocInfo.doctitle}"/>">
+									<input type="text" class="form-control" id="doctitle" name="doctitle" maxlength="50" value="<c:out value="${signDocInfo.doctitle}"/>">
 								</div>
 							</div>
 							<div class="row form-group">
