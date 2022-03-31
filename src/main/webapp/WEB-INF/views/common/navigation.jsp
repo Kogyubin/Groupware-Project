@@ -27,7 +27,7 @@
 						</ul>
 					</c:if>
 					
-					<li><span><a  href="elements.html">게시판</a></span></li>
+					<li><span><a onclick="contentAdd('${path}/boardlist')">게시판</a></span></li>
 					<li><span class="opener" >전자결재</span>
 						<ul>
 							<li><span><a onclick="contentAdd('${path}/signdetail')"  >기안하기</a></span></li>
