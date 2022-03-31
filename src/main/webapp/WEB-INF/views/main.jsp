@@ -38,7 +38,10 @@
 				<%@include file="common/head.jsp"%>
 				
 				<section id="content">
+
 				<%@include file="common/calendar.jsp" %>
+<%-- 				<%@include file="board/mainboardlist.jsp" %> --%>
+				
 				</section>
 				
 

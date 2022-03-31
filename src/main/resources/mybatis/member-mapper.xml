@@ -7,8 +7,8 @@
 
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO emp
-		(emp_no, emp_name, emp_id, hiredate, position, deleteflag)
-		VALUES (#{emp_no}, #{emp_name}, #{emp_id}, #{hiredate}, #{position}, 'N')
+		(emp_no, emp_name, emp_id, dept_no, hiredate, position, deleteflag)
+		VALUES (#{emp_no}, #{emp_name}, #{emp_id}, #{dept_no}, #{hiredate}, #{position}, 'N')
 	</insert>
 	
 	<select id="selectSigninMember" parameterType="member" resultType="int">

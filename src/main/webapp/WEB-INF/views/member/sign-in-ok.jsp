@@ -17,7 +17,7 @@
 			
 		}else{//로그인 실패
 			alert("로그인 실패");
-			path="${path}/sign-in";
+			path="${path}";
 		}
 		
 		window.location.href=path;

@@ -86,7 +86,7 @@
 				emp_no : $("#empNo").val(),
 				emp_name : $("#empName").val(),
 				emp_id : $("#empId").val(),
-				dept_no : $("#selectBox").val(selectedNode),
+				dept_no : $("#selectBox option:selected").val(),
 				hiredate : $("#hiredate").val(),
 				position : $("#position").val()
 			};
@@ -114,7 +114,7 @@
 					}
 				}
 				
-				
+// 				deptTreeInUsersActivate($("#selectBox option:selected").val());
 				
 				
 				$("#myModal").modal('toggle');
