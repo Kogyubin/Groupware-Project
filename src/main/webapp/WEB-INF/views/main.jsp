@@ -10,7 +10,6 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <script>
 	function contentAdd($url){
-		
 		$.ajax({
 			url: $url,
 			
@@ -37,7 +36,11 @@
 
 				<!-- Header -->
 				<%@include file="common/head.jsp"%>
-				<%@include file="common/calendar.jsp"%>
+				
+				<section id="content">
+				<%@include file="common/calendar.jsp" %>
+				</section>
+				
 
 
 			</div>
