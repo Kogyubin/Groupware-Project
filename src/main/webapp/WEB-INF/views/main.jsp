@@ -37,8 +37,10 @@
 
 				<!-- Header -->
 				<%@include file="common/head.jsp"%>
+				
+				<section id="content">
 				<%@include file="common/calendar.jsp"%>
-
+				</section>
 
 			</div>
 		</div>
