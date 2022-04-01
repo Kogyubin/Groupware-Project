@@ -33,7 +33,7 @@ function fn_formSubmit(){
 </head>
 <body>
  <div>
-
+	
 		
 		<form role="form" id="form1" name="form1"  method="post">
         <div>
@@ -52,42 +52,46 @@ function fn_formSubmit(){
                 </div>
             </div>
             
+            
             <!-- /.row -->
-            <div class="panel panel-default"> 
-            	<div class="panel-body">
-					<div class="listHead">
-						<div class="listHiddenField pull-left field60">No.</div>
-						<div class="listHiddenField pull-right field100">종류</div>
-						<div class="listHiddenField pull-right field100">작성일자</div>
-						<div class="listHiddenField pull-right field100">작성자</div>
-						<div class="listHiddenField pull-right field100">상태</div>
-						<div class="listTitle">글 제목</div>
-					</div>
-					
+            <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+          
+						<th><div class="listHiddenField pull-left field60">No.</div></th>
+						<th><div class="listHiddenField pull-right field100">종류</div></th>
+						<th><div class="listHiddenField pull-right field100">작성일자</div></th>
+						<th><div class="listHiddenField pull-right field100">상태</div></th>
+						<th><div class="listTitle">글 제목</div></th>
+						
+				
+					</tr>
+					</thead>
 					<c:if test="${listview.size()==0}">
 						<div class="listBody height200">
 						</div>
 					</c:if>
 					
 					<c:forEach var="listview" items="${listview}" varStatus="status">
+					<tr>
 						<c:url var="link" value="signDocRead">
+					
+					
 							<c:param name="docno" value="${listview.docno}" />
 						</c:url>
-					
-						<div class="listBody">
-							<div class="listHiddenField pull-left field60 textCenter"><c:out value="${searchVO.totRow-((searchVO.page-1)*searchVO.displayRowCount + status.index)}"/></div>
-							<div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.dttitle}"/></div>
-							<div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.updatedate}"/></div>
-							<div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.usernm}"/></div>
-							<div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.docstatus}"/></div>
-							<div class="listTitle" title="<c:out value="${listview.doctitle}"/>">
-								<a href="${link}"><c:out value="${listview.doctitle}"/></a>
-							</div>
-						</div>
+						
+							<td><div class="listHiddenField pull-left field60 textCenter"><c:out value="${listview.docno}"/></div></td>
+							<td><div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.signpath}"/></div></td>
+							<td><div class="listHiddenField pull-right field100 textCenter"><c:out value="${listview.docregdate}"/></div></td>
+							<td><div class="listTitle"><c:out value="${listview.docstatus}"/>    </div></td>
+							<td><a href="${link}"><c:out value="${listview.doctitle}"/></a></td>
+						
+						
+						</tr>
 					</c:forEach>	
 					
 					<br/>
-				    
+				    </table>
 						<div class="form-group">
 							<div class="checkbox col-lg-3 pull-left">
 							 	<label class="pull-right">

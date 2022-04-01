@@ -2,7 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <mapper namespace="sign">
-
+	<resultMap id="signdocvo" type="kr.co.kitri.sign.vo.SignDocVO"> 
+		<result column="DOC_NO" property="docno" /> 
+		<result column="DOC_TITLE" property="doctitle" /> 
+		<result column="DOC_CONTENT" property="doccontent" /> 
+		<result column="DELETETAG" property="deletetag" /> 
+		<result column="DOC_STEP" property="docstep" /> 
+		<result column="DOC_SIGN_PATH" property="signpath" /> 
+		<result column="DT_NO" property="dtno" /> 
+		<result column="EMP_NO" property="empno" /> 
+		<result column="DEPT_NAME" property="deptname" /> 
+		<result column="DOC_REGDATE" property="docregdate" /> 
+		<result column="DOC_UPDATE" property="docupdate" /> 
+		<result column="DOC_STATUS" property="docstatus" /> 
+	</resultMap>
 	<!-- 결재 문서 작성 -->    
 <!--     <sql id="includeSignDoc"> -->
 <!--         INNER JOIN SGN_SIGN SS ON SS.DOCNO=SD.DOCNO AND SS.USERNO=${userno} AND SSTYPE!=0 -->
@@ -16,6 +29,8 @@
 <!--         </if>                -->
 <!--     </sql> -->
 
+    
+    
     <select id="selectSignDocCount" resultType="Integer" parameterType="kr.co.kitri.common.SearchVO">
        SELECT COUNT(*)
           FROM DOC;
@@ -56,9 +71,9 @@
 
 <!--     </select>  -->
     
-    <select id="selectSignDocTobeList" resultType="kr.co.kitri.sign.vo.SignDocVO" parameterType="String">
+    <select id="selectSignDocTobeList" resultMap="signdocvo">
         SELECT DOC_NO, DOC_TITLE, DOC_CONTENT, DOC_STATUS, DELETETAG, DOC_STEP, DOC_SIGN_PATH, DT_NO, EMP_NO, DEPT_NAME, DOC_REGDATE, DOC_UPDATE
-FROM DOC;
+        FROM DOC
          
     </select> 
             

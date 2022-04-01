@@ -59,10 +59,10 @@ public class SignChkController {
 ////        // 
 ////        searchVO.setEmpno(empno);
 ////        searchVO.pageCalculate( signSvc.selectSignDocTobeCount(searchVO) ); // startRow, endRow
-//        List<?> listview  = signSvc.selectSignDocTobeList(signdocVO);
+        List<?> listview  = signSvc.selectSignDocTobeList(signdocVO);
 ////        
-//        modelMap.addAttribute("signdocVO", signdocVO);
-//        modelMap.addAttribute("listview", listview);
+        modelMap.addAttribute("signdocVO", signdocVO);
+        modelMap.addAttribute("listview", listview);
 ////        
         return "signchk/SignDocListTobe";
     }
